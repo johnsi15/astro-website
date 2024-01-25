@@ -1,5 +1,6 @@
 ---
 import Button from '../components/Button.astro'
+import { Counter } from '../components/Counter'
 import Layout from '../layouts/Layout.astro'
 ---
 
@@ -9,6 +10,10 @@ import Layout from '../layouts/Layout.astro'
     <a href='/about' class='text-rose-600 text-xl hover:underline'>About here</a>
 
     <Button />
+
+    <section class='my-5 w-full'>
+      <Counter client:visible />
+    </section>
   </main>
 </Layout>
 
