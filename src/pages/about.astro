@@ -1,13 +1,18 @@
 ---
 import Card from '../components/Card.astro'
 import Layout from '../layouts/Layout.astro'
+
+const styleAnchor = 'text-rose-600 text-xl hover:underline'
 ---
 
 <Layout title='Sobre mi'>
   <main>
-    <a href='/'>Inicio</a>
-    <a href='/about'>Sobre mi</a>
-    <h1>Sobre mi</h1>
+    <nav class='flex gap-4 mb-12'>
+      <a href='/' class={styleAnchor}>Inicio</a>
+      <a href='/about' class={styleAnchor}>Sobre mi</a>
+    </nav>
+
+    <h1 class='text-4xl text-center mb-16'>Sobre mi</h1>
 
     <Card
       title='John Serrano'
