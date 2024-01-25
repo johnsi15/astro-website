@@ -1,12 +1,19 @@
 ---
+import Card from '../components/Card.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title='Sobre mi'>
   <main>
     <a href='/'>Inicio</a>
-    <a href='/about/'>Sobre mi</a>
+    <a href='/about'>Sobre mi</a>
     <h1>Sobre mi</h1>
+
+    <Card
+      title='John Serrano'
+      body='Ejemplo de como desarrollar un sitio web con Astro'
+      href='https://johnserrano.co'
+    />
   </main>
 </Layout>
 

@@ -1,10 +1,14 @@
 ---
+import Button from '../components/Button.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title='Página principal'>
-  <main>
-    <h1>Hello World</h1>
+  <main class='flex flex-col gap-4 items-start'>
+    <h1 class='text-2xl'>Hello World</h1>
+    <a href='/about' class='text-rose-600 text-xl font-semibold hover:underline'>About here</a>
+
+    <Button />
   </main>
 </Layout>
 
