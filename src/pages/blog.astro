@@ -1,17 +1,17 @@
 ---
-
+const pageTitle = 'Mi blog de Astro aprendizaje'
 ---
 
 <html lang='es'>
   <head>
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width' />
-    <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <a href='/'>Inicio</a>
     <a href='/about/'>Sobre mi</a>
-    <a href='/blog/'>Blog</a>
+    <a href='/blog/'>{pageTitle}</a>
 
     <h1>Mi blog de aprendizaje sobre Astro</h1>
     <p>Aquí es donde publicaré acerca de mi viaje aprendiendo Astro.</p>

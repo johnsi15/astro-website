@@ -3,22 +3,62 @@ import Card from '../components/Card.astro'
 import Layout from '../layouts/Layout.astro'
 
 const styleAnchor = 'text-rose-600 text-xl hover:underline'
+const pageTitle = 'Sobre mi'
+
+const identity = {
+  firstName: 'John',
+  country: 'Colombia',
+  occupation: 'Web developer',
+  hobbies: ['cine', 'salir de paseo', 'andar moto'],
+}
+
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Node.js']
+
+const happy = true
+const finished = false
+const goal = 3
 ---
 
-<Layout title='Sobre mi'>
+<Layout title={pageTitle}>
   <main>
     <nav class='flex gap-4 mb-12'>
       <a href='/' class={styleAnchor}>Inicio</a>
-      <a href='/about' class={styleAnchor}>Sobre mi</a>
+      <a href='/about' class={styleAnchor}>{pageTitle}</a>
     </nav>
 
-    <h1 class='text-4xl text-center mb-16'>Sobre mi</h1>
+    <h1 class='text-4xl text-center mb-16'>{pageTitle}</h1>
 
     <Card
       title='John Serrano'
       body='Ejemplo de como desarrollar un sitio web con Astro'
       href='https://johnserrano.co'
     />
+
+    <p>He aquí algunos datos sobre mí:</p>
+    <ul>
+      <li>Me llamo {identity.firstName}.</li>
+      <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+
+    <p>Mis habilidades son:</p>
+    <ul>
+      {skills.map(skill => <li>{skill}</li>)}
+    </ul>
+
+    <section>
+      {happy && <p>¡Estoy feliz de aprender Astro!</p>}
+
+      {finished && <p>¡He terminado este tutorial!</p>}
+
+      {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+    </section>
   </main>
 </Layout>
 
@@ -31,5 +71,9 @@ const styleAnchor = 'text-rose-600 text-xl hover:underline'
     color: white;
     font-size: 20px;
     line-height: 1.6;
+  }
+
+  section {
+    margin: 50px 0;
   }
 </style>
