@@ -1,6 +1,7 @@
 ---
 import Card from '../components/Card.astro'
 import Layout from '../layouts/Layout.astro'
+import '../styles/global.css'
 
 const styleAnchor = 'text-rose-600 text-xl hover:underline'
 const pageTitle = 'Sobre mi'
@@ -17,6 +18,10 @@ const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Node.js']
 const happy = true
 const finished = false
 const goal = 3
+
+const skillColor = '#a24d4d'
+const fontWeight = 'bold'
+const textCase = 'uppercase'
 ---
 
 <Layout title={pageTitle}>
@@ -49,7 +54,7 @@ const goal = 3
 
     <p>Mis habilidades son:</p>
     <ul>
-      {skills.map(skill => <li>{skill}</li>)}
+      {skills.map(skill => <li class='skill'>{skill}</li>)}
     </ul>
 
     <section>
@@ -62,18 +67,24 @@ const goal = 3
   </main>
 </Layout>
 
-<style>
+<style define:vars={{ skillColor, fontWeight, textCase }}>
   main {
     margin: auto;
     padding: 1rem;
     width: 800px;
     max-width: calc(100% - 2rem);
-    color: white;
+    color: #6f6f6f;
     font-size: 20px;
     line-height: 1.6;
   }
 
   section {
     margin: 50px 0;
+  }
+
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
   }
 </style>
