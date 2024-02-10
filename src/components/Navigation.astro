@@ -1,6 +1,10 @@
 ---
+interface Props {
+  blogTitle: string
+}
+
 const stylesLink = 'text-rose-600 text-xl hover:underline'
-const { blogTitle }: Record<string, string> = Astro.props
+const { blogTitle } = Astro.props
 ---
 
 <a href='/' class={stylesLink}>Inicio</a>
