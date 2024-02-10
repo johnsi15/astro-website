@@ -2,6 +2,7 @@
 import Button from '../components/Button.astro'
 import { Counter } from '../components/Counter'
 import Layout from '../layouts/Layout.astro'
+import Navigation from '../components/Navigation.astro'
 
 const pageTitle = 'Home'
 ---
@@ -9,8 +10,7 @@ const pageTitle = 'Home'
 <Layout title={pageTitle}>
   <main class='flex flex-col gap-4 items-start'>
     <h1 class='text-4xl text-center'>{pageTitle}</h1>
-    <a href='/about' class='text-rose-600 text-xl hover:underline'>About here</a>
-    <a href='/blog' class='text-rose-600 text-xl hover:underline'>Blog</a>
+    <Navigation />
 
     <Button />
 
