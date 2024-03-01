@@ -1,4 +1,5 @@
 ---
+import { fade } from 'astro:transitions'
 import BaseLayout from './BaseLayout.astro'
 
 interface Props {
@@ -22,7 +23,7 @@ const tags = frontmatter.tags
 
 <BaseLayout pageTitle={frontmatter.title}>
   <p>Escrito por {frontmatter.author} 🔥</p>
-  <p><em>{frontmatter.description}</em></p>
+  <p transition:animate={fade({ duration: '2s' })}><em>{frontmatter.description}</em></p>
   <p>Publicado el: {frontmatter.pubDate.toString().slice(0, 10)}</p>
 
   <div class='bg-gray-900 p-3 flex justify-center items-center'>
