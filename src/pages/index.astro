@@ -4,6 +4,7 @@ import { Counter } from '../components/Counter'
 import Layout from '../layouts/Layout.astro'
 import Header from '../components/Header.astro'
 import Greeting from '../components/Greeting'
+import ButtonType from '../components/ButtonType.astro'
 
 const pageTitle = 'Home'
 ---
@@ -14,6 +15,9 @@ const pageTitle = 'Home'
     <Header />
 
     <Button />
+
+    <ButtonType as='a' href='/about' class='border p-2 border-cyan-600 rounded'>Soy un botón</ButtonType>
+    <ButtonType class='border p-2 border-cyan-600 rounded'>Soy otro botón</ButtonType>
 
     <Greeting client:load messages={['Hola', 'Qué tal', 'Hola a todos']} />
 
